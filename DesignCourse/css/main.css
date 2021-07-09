@@ -1,0 +1,35 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-size: 5em;
+    height: 100vh;
+    font-family: fantasy;
+}
+
+section{
+    height: 100%;
+}
+
+ul{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(3, auto); 
+    /* this basically creates a three equally spaced columns */
+    justify-content: center;
+    align-items: middle;
+    place-items: center;
+    column-gap: 15px;
+    height: 100vh;
+}
+
+span{
+    width: 110px;
+    height: 110px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: black;
+    border-radius: 50%;
+}

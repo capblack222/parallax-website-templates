@@ -1,0 +1,84 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+// @mixin are functions which allows you to use the functions to reuse, just same as functions
+@mixin align-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body{
+    font-family: 'Raleway', roboto;
+    font-size: 4em;
+    color: white;
+
+    .parallax-wrapper{
+        height: 100vh;
+        // background-color: turquoise;
+        overflow-x: hidden;
+        overflow-y: auto;
+        perspective: 300px;  // this refers to z axis that is the depth
+
+        .intro-screen{
+            height: 100vh;
+            background-color: tomato;
+            @include align-center(); // used to use the function
+        }
+
+        .outro-screen{
+            height: 100vh;
+            background-color: teal;
+            @include align-center();
+        }
+
+        .parallax-group{
+            position: relative;
+            height: 100vh;
+            transform-style: preserve-3d; // it just preserves the depth which we are looking into as some of the browsers might not uk render it the same way and flatten it, and it is important to apply
+
+            .parallax-layer{
+                position: absolute;
+                inset: 0; // corresponds to giving left right top bottom as 0 as we want our parallax layer to stretch in all those sides
+                @include align-center();
+            }
+
+            .base_layer{
+                transform: translateZ(-290px) scale(2); // as we want in to go behind in the z-direction
+                // need to know calculation
+                // called scale calculation : 1+ ((z-transform value * -1) / perspective)
+                // it is not accurate - need to use hit and trial to make it how you want it to look
+            }
+
+            .mid_layer{
+                transform: translateZ(0);
+            }
+
+            .top_layer{
+                transform: translateZ(210px) scale(0.3); //using the same formula
+            }
+        }
+
+        #intro{
+            z-index: 0;
+        }
+
+        #group1{
+            z-index: -1;
+        }
+
+        #group1 > .base_layer {
+            background-color: crimson;
+        }
+
+        // #group2{}
+
+        #group2 > .mid_layer{
+            background-color: yellowgreen;
+        }
+
+        // #outro{}
+    }
+}

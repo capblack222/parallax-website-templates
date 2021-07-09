@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parallax using SASS</title>
+    <link rel="stylesheet" href="./styles/style.css">
+</head>
+
+<!-- for now I am going to copy the same thing as Filip so * shrugs * -->
+<!-- Also, he is using SCSS so this should be fun {: -->
+<!-- Oh SASS is really fun to use -->
+
+<body>
+    <div class="parallax-wrapper">
+        <!-- Intro and Outro are the ones that take up the whole screen while the groups are the which will uk slide above each other or like give a 3d scrolling effect -->
+        <div class="parallax-group intro-screen" id="intro">
+            Awesome Parallax Tutorial by Filip
+            <!-- changed it a little, nvm XD -->
+        </div>
+
+        <div class="parallax-group" id="group1">
+            <!-- create layers at same level but at different perspective -->
+            <div class="parallax-layer base_layer">
+                Base Layer Page
+            </div>
+            <div class="parallax-layer mid_layer">
+                First Mid Layer Page
+            </div>
+        </div>
+        <!-- Just adding the perspectives by those layers, that three perspectives here -->
+        <div class="parallax-group" id="group2">
+            <div class="parallax-layer mid_layer">
+                Second Mid Layer Page
+            </div>
+            <div class="parallax-layer top_layer">
+                Top Layer Page
+            </div>
+        </div>
+
+        <div class="parallax-group outro-screen" id="outro">
+            This too shall end.
+        </div>
+    </div>
+</body>
+
+</html>
